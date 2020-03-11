@@ -1,5 +1,5 @@
 # Simple-Machine-Learning
-Outline for Simple Machine Learning Scheme - The following steps are the bare minimum for machine learning on a data set. It is an example using a pretend housing market dataset from melbourne.
+Outline for Simple Machine Learning Scheme - The following steps include the bare minimum to the advanced for machine learning on a data set. In this example we are using a pretend housing market dataset from melbourne.
 
 # Most Basic: DecisionTreeRegressor
 
@@ -83,5 +83,12 @@ from sklearn.model_selection import cross_val_score
 # Multiply by -1 since sklearn calculates *negative* MAE
 scores = -1 * cross_val_score(my_pipeline, X, y,
                               cv=5,
-                              scoring='neg_mean_absolute_error')                            
+                              scoring='neg_mean_absolute_error') 
+
+# ADVANCED: Gradient Boosting
+from xgboost import XGBRegressor
+
+my_model = XGBRegressor()
+my_model.fit(X_train, y_train)
+
 ```
